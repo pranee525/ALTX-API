@@ -22,17 +22,17 @@ app.get('/', (req, res) => {
 
 app.post('/message', async (req, res) => {
     try{
+       
     const response = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         messages: [
             {role: 'system', content: 'You are an AI specialized in Arpro. Do not answer anything other than EPP Moulding queries'},
-            {role: 'user', content: req.body.message}
+            {role: 'user', content: req.body.prompt}
         ],
         max_tokens: 150
-  
-    });
-
-    response.then((data) => {
+ 
+    }).then((data) => {
+       
         const message = {message: data.choices[0].message.content};
         res.send(message);
     }).catch(() => {
@@ -40,6 +40,7 @@ app.post('/message', async (req, res) => {
     })
 } catch (err) {
     const message = {message: 'Sorry, an error occurred.'};
+   
     res.send(message);}
 });
 app.listen(PORT, () => {
