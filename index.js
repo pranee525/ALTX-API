@@ -5,6 +5,8 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+
+const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -40,5 +42,6 @@ app.post('/message', async (req, res) => {
     const message = {message: 'Sorry, an error occurred.'};
     res.send(message);}
 });
-
-app.listen(3000, () => console.log('Listening on port 3000'));
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
