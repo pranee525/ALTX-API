@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 const app = express();
+import OpenAIApi from 'openai';
+
 
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
