@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-const openai = new OpenAIApi({
+const openai = new OpenAIApi.OpenAI({
     apiKey: process.env.API_TOKEN
 });
 
