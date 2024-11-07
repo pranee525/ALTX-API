@@ -28,10 +28,9 @@ app.post('/message', async (req, res) => {
             max_tokens: 150,
         });
 
-        const message = { message: response.data.choices[0].message.content };
-        res.status(200).send(message);
+        res.status(200).send({ message: response.data.choices[0].message.content });
     } catch (err) {
-        console.error('Error:', err);
+        console.error('Error during invocation:', err);
         res.status(500).send({ message: 'Sorry, an error occurred.' });
     }
 });
