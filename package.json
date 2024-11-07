@@ -1,6 +1,6 @@
 {
   "name": "altex-api",
-  "version": "1.0.0",
+  "version": "1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,6 @@
     "openai": "^4.38.2"
   },
   "engines": {
-    "node": "16.x"  // specify the Node.js version compatible with your project (adjust if needed)
+    "node": "16"  // specify the Node.js version compatible with your project (adjust if needed)
   }
 }
